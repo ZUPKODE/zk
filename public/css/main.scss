@@ -68,3 +68,35 @@ textarea {
 .fa {
   margin-right: 6px;
 }
+
+.languages{
+  margin-top: 20px;
+}
+
+.language-badge{
+  float: left;
+  width: 140px;
+  height: 160px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+  width: 80px;
+  height: 80px;
+}
+
+.language-badge-icon{
+  height: 80px;
+  padding: 10px;
+  padding-top: 24px;
+}
+
+.language-badge-text{
+  margin-top: 42px;
+  text-align: center;
+}
