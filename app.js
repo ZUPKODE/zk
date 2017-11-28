@@ -26,10 +26,15 @@ dotenv.load({ path: '.env.example' });
 /**
  * Controllers (route handlers).
  */
-const homeController = require('./controllers/home');
-const userController = require('./controllers/user');
+
+
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
+const challengesController = require('./controllers/challenges');
+const coursesController = require('./controllers/courses');
+const homeController = require('./controllers/home');
+const playgroundController = require('./controllers/playground');
+const userController = require('./controllers/user');
 
 /**
  * API keys and Passport configuration.
@@ -115,6 +120,9 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * Primary app routes.
  */
 app.get('/', homeController.index);
+app.get('/courses', coursesController.getCourses);
+app.get('/challenges', challengesController.getChallenges);
+app.get('/playground', playgroundController.getPlayground);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -133,7 +141,7 @@ app.post('/account/delete', passportConfig.isAuthenticated, userController.postD
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
 /**
- * API examples routes.
+ * API integrations routes.
  */
 app.get('/api', apiController.getApi);
 app.get('/api/stripe', apiController.getStripe);

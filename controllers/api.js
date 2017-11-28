@@ -9,11 +9,11 @@ const paypal = require('paypal-rest-sdk');
 
 /**
  * GET /api
- * List of API examples.
+ * List of API integrations.
  */
 exports.getApi = (req, res) => {
   res.render('api/index', {
-    title: 'API Examples'
+    title: 'API Integrations'
   });
 };
 
